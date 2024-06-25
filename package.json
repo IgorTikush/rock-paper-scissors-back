@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "engines": {
-    "node": "16.13.1"
+    "node": "20.9.0"
   },
   "author": "",
   "private": true,
@@ -26,16 +26,24 @@
   "dependencies": {
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
+    "@nestjs/mongoose": "^10.0.6",
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/platform-socket.io": "^8.4.3",
     "@nestjs/websockets": "^8.4.3",
+    "@orbs-network/ton-access": "^2.3.3",
+    "@ton-community/gamefi-sdk": "^0.0.3",
+    "@ton/core": "^0.56.3",
+    "@ton/crypto": "^3.2.0",
+    "@ton/ton": "^13.11.1",
     "config": "^3.3.7",
     "ethereumjs-common": "^1.5.2",
     "ethereumjs-tx": "^2.1.2",
+    "mongoose": "^8.3.4",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
     "socket.io": "^4.4.1",
+    "ton-client-node-js": "^0.28.0",
     "web3": "^1.7.3",
     "web3-eth": "^1.7.3"
   },
