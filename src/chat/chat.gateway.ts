@@ -29,6 +29,14 @@ export class ChatGateway {
     console.log(`Client connected: ${client.id}`);
   }
 
+  handleDisconnect(client: Socket): void {
+    Object.entries(state).forEach(([roomName, roomInfo]) => {
+      if (roomInfo[client.id]) {
+        delete state[roomName];
+      }
+    });
+  }
+
   @SubscribeMessage('checkRooms')
   createRoom(@ConnectedSocket() socket: Socket, @Req() { user }: { user: any }): any {
     console.log('checkRooms');
