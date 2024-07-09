@@ -36,16 +36,16 @@ export class AppController {
     console.log('user', user);
     const userInDb = await this.userService.find(user.id);
     console.log('wallet', wallet);
-    if (!userInDb) {
-      const userToCreate = {
-        tgId: user.id,
-        firstName: user.first_name,
-        lastName: user.last_name,
-        tgUsername: user.username,
-        balance: 0,
-      }
-      await this.userService.createUser(userToCreate);
-    }
+    // if (!userInDb) {
+    //   const userToCreate = {
+    //     tgId: user.id,
+    //     firstName: user.first_name,
+    //     lastName: user.last_name,
+    //     tgUsername: user.username,
+    //     balance: 0,
+    //   }
+    //   await this.userService.createUser(userToCreate);
+    // }
 
     await this.appService.handleBuy(user, wallet);
     return {};

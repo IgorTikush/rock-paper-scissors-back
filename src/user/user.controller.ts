@@ -23,8 +23,21 @@ export class UserController {
   @Post('user-info')
   @UseGuards(WebAppDataGuard)
   async getUserInfo(@Req() { user }: { user: any }) {
-    console.log(user)
+    // console.log(user)
     const userInDb = await this.userService.find(user.id);
+    console.log(userInDb)
+    if (!userInDb) {
+      const userToCreate = {
+        tgId: user.id,
+        firstName: user.first_name,
+        lastName: user.last_name,
+        tgUsername: user.username,
+        balance: 0,
+      }
+      const createResult = await this.userService.createUser(userToCreate);
+      console.log('result', createResult);
+      return createResult;
+    }
     console.log(userInDb)
     return userInDb;
   }
